@@ -214,9 +214,9 @@
 									<!-- Social
 									============================================= -->
 									<ul class="social">
-										<li><a href="#." class="facebook"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#." class="twitter"><i class="icon-twitter4"></i></a></li>
-										<li><a href="#." class="google-plus"><i class="icon-google-plus"></i></a></li>
+										<li><a href="http://facebook.com/instantpro" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+										<!-- <li><a href="#." class="twitter" target="_blank"><i class="icon-twitter4"></i></a></li> -->
+										<li><a href="https://www.linkedin.com/company-beta/18112025/" class="facebook" target="_blank"><i class="icon-linkedin"></i></a></li>
 									</ul>
 								</div>
 							</div>

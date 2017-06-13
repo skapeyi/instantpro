@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Datatables;
 use App\User;
+use Datatables;
+use App\Prorequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Log;
+
 
 class AdminController extends Controller
 {
@@ -35,11 +39,25 @@ class AdminController extends Controller
 		return view('admin.pro.all');
 	}
 
-	public function editProrequest(){
-
+	public function editProrequest($id){
+		$pro_req = Prorequest::find($id);
+		$pros = DB::table('users')->where(['role' => 'Professional'])->pluck('name','id');
+		return view('admin.pro.edit',compact('pro_req','pros'));
 	}
 
-	public function updateProrequest(){
+	public function updateProrequest(Request $request, $id){
+		Log::info($request);
+		$pro_req = Prorequest::find($id);
+		$pro_req->pro_id = $request->pro_id;
+		$pro_req->deleted = $request->deleted;
+		$pro_req->status = $request->status;
 
+		if($pro_req->save()){
+			flash()->success('The Pro request has been updated. The customer and professional will be alerted shortly!');
+			return redirect('/admin/prorequests');
+		}
+		else{
+			flash()->error('Something went wrong while processing your request, please try again later!');
+		}
 	}
 }
