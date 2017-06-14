@@ -44,3 +44,12 @@ Route::group(['prefix' => 'admin/prorequests'], function(){
 Route::get('/get_users','ResourceController@get_users');
 Route::get('/get-pro-requests','ResourceController@get_prorequests');
 
+Route::group(['prefix' => 'account'], function(){
+	Route::get('/', 'AccountController@index');
+	Route::get('/myrequests','AccountController@myRequests');
+	Route::get('/changepassword','AccountController@changePassword');
+	Route::put('/changepassword','AccountController@updatePassword');
+	Route::get('/updateprofile','AccountController@updateProfile');
+	Route::put('/updateprofile','AccountController@updateprofile');
+});
+
