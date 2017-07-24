@@ -182,8 +182,8 @@
           		<div class="row">
             		<div class="col-md-2">
               			<ul class="nav nav-sidebar">
-                  			<li><a href="/admin/users">Change Password</a></li>
-                  			<li><a href="/admin/prorequests">Update Profile</a></li>
+                  			<li><a href="/admin/users">Users</a></li>
+                  			<li><a href="/admin/prorequests">Requests</a></li>
                   			<li><a href="#">Feedback</a></li>
               			</ul>
             		</div>
